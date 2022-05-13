@@ -5,9 +5,8 @@ import ContactList from "./Components/ContactList";
 
 
 function App() {
-  const [contacts, setContacts] = React.useState([{name: "ziya", mail: "ziyaahmedli@mail.ru"}])
+  const [contacts, setContacts] = React.useState([])
   console.log(contacts)
-
 
   return(
     <div>
@@ -18,8 +17,7 @@ function App() {
           setContacts = {setContacts}  
         />
         
-        <ContactList contacts= {contacts}
-        />
+        {/* <ContactList contacts= {contacts}/> */}
       </div>
     </div>
   )

@@ -1,17 +1,17 @@
-import React from "react";
-import ContactCard from "./ContactCard";
+// import React from "react";
+// import ContactCard from "./ContactCard";
 
-const ContactList = (props) => {
+// const ContactList = (props) => {
     
-    // const renderContactList = props.contacts.map((contact)=>{
-    //     return (
-    //         <ContactCard contact={contact} />
-    //     )
-    // })
+//     // const renderContactList = props.contacts.map((contact)=>{
+//     //     return (
+//     //         <ContactCard contact={contact} />
+//     //     )
+//     // })
   
-    // return (<div>{renderContactList}</div>)
+//     // return (<div>{renderContactList}</div>)
     
 
-}
+// }
 
-export default ContactList
+// export default ContactList
