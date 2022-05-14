@@ -6,7 +6,6 @@ import ContactList from "./Components/ContactList";
 
 function App() {
   const [contacts, setContacts] = React.useState([])
-  console.log(contacts)
 
   return(
     <div>
