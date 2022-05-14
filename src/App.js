@@ -5,18 +5,24 @@ import ContactList from "./Components/ContactList";
 
 
 function App() {
-  const [contacts, setContacts] = React.useState([])
+  const [contacts, updateContacts] = React.useState([]);
+
+  const addContact = (contactInfo) => {
+    updateContacts([...contacts, contactInfo]);
+  };
+  console.log(contacts)
 
   return(
     <div>
       <Header/>
       <div className="p-3">
         <ContactForm 
-          contacts= {contacts}
-          setContacts = {setContacts}  
+          addContact = {addContact}
         />
         
-        {/* <ContactList contacts= {contacts}/> */}
+        <ContactList 
+          contacts= {contacts}
+        />
       </div>
     </div>
   )

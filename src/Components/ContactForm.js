@@ -1,52 +1,54 @@
 import React from "react";
 
 const ContactForm = (props) => {
-  const { contacts, setContacts } = props;
+  const [contactInfo, setContactInfo] = React.useState({
+    userName: '',
+    mail: ''
+  })
 
+  const handleChange = (e)=>{
+    const {name, value} = e.target
+    setContactInfo(prevContact => ({...prevContact, [name]: value}))
+  }
 
-  const handleChange = (e) => {
-    setContacts((prevContact) => ({
-      ...prevContact,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    contacts.name = "";
-    contacts.mail = "";
-    console.log(contacts.name, contacts.mail)
-  };
-
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    if(contactInfo.userName==="" && contactInfo.mail==="") alert("Any Field is empty")
+    
+    else{
+    props.addContact(contactInfo)
+    setContactInfo({userName: "", mail: ""})
+    }
+  }
 
   return (
     <div>
-      <form className="">
+      <form className="" onSubmit={handleSubmit}>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">
+          <label class="form-label">
             Name
           </label>
           <input
             type="text"
-            name="name"
+            name="userName"
             class="form-control"
-            value={contacts.name}
+            value={contactInfo.userName}
             onChange={handleChange}
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
+          <label class="form-label">
             Mail
           </label>
           <input
             type="email"
             name="mail"
-            value={contacts.mail}
+            value={contactInfo.mail}
             class="form-control"
             onChange={handleChange}
           />
         </div>
-        <button type="submit" class="btn btn-primary" onClick={handleSubmit}>
+        <button type="submit" class="btn btn-primary" >
           Add
         </button>
       </form>
