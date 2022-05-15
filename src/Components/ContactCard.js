@@ -1,5 +1,4 @@
 import React from 'react'
-
 const ContactCard = (props) => {
 
     const {id, userName, mail} = props.contact;
@@ -16,7 +15,7 @@ const ContactCard = (props) => {
                     <h6>{mail}</h6>
                 </div>
             </div>
-            <button className="border border-danger" onClick={props.deleteContact}>
+            <button className="border border-danger" onClick={()=>props.clickHandler(id)}>
                 <i className="bi bi-trash"></i>
             </button>
         </div>
